@@ -3,10 +3,22 @@ import AddNewForm from "./add_new_form"
 
 export default function TodoList() {
     const todo = [
-        { name: "Task 1"},
-        { name: "Task 2"},
-        { name: "Task 3"},
-    ]
+        {
+          id: 1,
+          text: "Task 1",
+          isCompleted: true
+        },
+        {
+          id: 2,
+          text: "Task 2",
+          isCompleted: false
+        },
+        {
+          id: 3,
+          text: "Task 3",
+          isCompleted: false
+        }
+      ];
     return (
         <div
       className="card rounded shadow-sm mx-auto my-4"
@@ -15,7 +27,7 @@ export default function TodoList() {
         <div className="card-body">
                 <h3 className="card-title mb-3">My Todo List</h3>
                 {todo.map((todos) =>  {
-                    return <TodoItem name={todos.name} />
+                    return <TodoItem name={todos.text} />
                 })}
                 <AddNewForm />
             </div>
