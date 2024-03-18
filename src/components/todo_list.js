@@ -3,9 +3,9 @@ import AddNewForm from "./add_new_form"
 
 export default function TodoList() {
     const todo = [
-        { name: "Task 1"},
-        { name: "Task 2"},
-        { name: "Task 3"},
+        { name: "Task"},
+        { name: "Task"},
+        { name: "Task"},
     ]
     return (
         <div
@@ -14,8 +14,8 @@ export default function TodoList() {
     >
         <div className="card-body">
                 <h3 className="card-title mb-3">My Todo List</h3>
-                {todo.map((todos) =>  {
-                    return <TodoItem name={todos.name} />
+                {todo.map((todos, index) =>  {
+                    return <TodoItem name={todos.name} num={index+1} />
                 })}
                 <AddNewForm />
             </div>
